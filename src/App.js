@@ -4,17 +4,8 @@ import CPUSpace from './components/CPUSpace';
 import ColorSpace from './components/ColorSpace';
 import CheckButtonSpace from './components/CheckButtonSpace';
 import AnswerTitleSpace from './components/AnswerTitleSpace';
+import HelpMenu from './components/HelpMenu';
 import { useState } from 'react';
-
-const HelpMenu = (props) => {
-  return (
-    <div id='help'>
-      <button className='help-button'>
-        ?
-      </button>
-    </div>
-  );
-};
 
 
 function App() {
