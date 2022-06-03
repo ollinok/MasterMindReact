@@ -1,7 +1,11 @@
-const ConstButton = (props) => {
-  const styling = {gridRow: 10};
+const CheckButton = ({ currentRow, currentGuess, checkGuess }) => {
+  const styling = {gridRow: 11 - currentRow};
   return (
-    <button className='check-button' style={styling}>
+    <button
+      className='check-button'
+      style={styling}
+      onClick={() => checkGuess()}
+      disabled={currentGuess.includes(undefined)}>
       Check
     </button>
   );
@@ -10,7 +14,11 @@ const ConstButton = (props) => {
 const CheckButtonSpace = (props) => {
   return (
     <div id='check-space' className='grid-rows'>
-      <ConstButton />
+      <CheckButton
+        currentRow={props.currentRow}
+        currentGuess={props.currentGuess}
+        checkGuess={props.checkGuess}
+      />
     </div>
   );
 }

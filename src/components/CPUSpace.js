@@ -1,16 +1,22 @@
-const CPUmarker = (props) => {
+const CPUmarker = ({ color }) => {
+  const styling = {
+    backgroundColor: color
+  };
   return (
-    <div className='cpu-markers'>
+    <div
+      className='cpu-markers'
+      style={styling}>
     </div>
   );
 }
 
-const CPURow = (props) => {
+const CPURow = ({ index, row }) => {
   return (
-    <div id={`cpu-row${10-props.i}`} className='cpu-rows'>
-      {[...Array(4)].map((_ele, i) =>
+    <div id={`cpu-row${10-index}`} className='cpu-rows'>
+      {row.map((color, i) =>
         <CPUmarker
           key={i}
+          color={color}
           i={i}
         />
       )}  
@@ -21,10 +27,11 @@ const CPURow = (props) => {
 const CPUSpace = (props) => {
   return (
     <div id='cpu-space' className='grid-rows'>
-      {[...Array(10)].map((_ele, i) =>
+      {props.cpuMarkers.map((row, i) =>
         <CPURow 
           key={i}
-          i={i}  
+          index={i}
+          row={row}
         />
       )}
     </div>
