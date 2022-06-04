@@ -20,6 +20,7 @@ function App() {
   const [cpuMarkers, setCpuMarkers] = useState([]);
   const [gameEnd, setGameEnd] = useState(false);
   const [newGame, setNewGame] = useState(0);
+  const [showHelp, setShowHelp] = useState(false);
 
   useEffect(() => {
     setGameEnd(false);
@@ -52,7 +53,7 @@ function App() {
     }
     addCpuMarkers();
     const newBoard = [...board];
-    newBoard[board.length-  currentRow] = guess;
+    newBoard[board.length - currentRow] = guess;
     setBoard(newBoard);
     setCurrentGuess([...Array(4)]);
   };
@@ -94,7 +95,6 @@ function App() {
     <>
       <main className='grid-container'>
         <AnswerTitleSpace />
-        <HelpMenu />
         <CPUSpace
           cpuMarkers={cpuMarkers}
         />
@@ -114,6 +114,10 @@ function App() {
           colors={colors}
           currentColor={currentColor}
           changeColor={(c) => changeColor(c)}
+        />
+        <HelpMenu
+          status={showHelp}
+          show={() => setShowHelp(!showHelp)}
         />
         {gameEnd
           ? <VictorySplash

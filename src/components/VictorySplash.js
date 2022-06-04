@@ -13,15 +13,14 @@ const AnswerMarker = ({ color }) => {
 
 const VictorySplash = (props) => {
   return (
-    <div id="victory-splash" className='flex-column'>
+    <div id="victory-splash" className='splash-div flex-column'>
       <span className='big-text'>Victory!</span>
       <div className='player-rows' style={{ gap: `10px`}}>
-        {props.answer.map(color =>
+        {props.answer.map((color,i) =>
             <AnswerMarker
-              key={color}
+              key={i}
               color={color}
-            />
-          )
+            />)
         }
       </div>
       <button
