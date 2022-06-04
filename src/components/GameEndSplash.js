@@ -12,10 +12,12 @@ const AnswerMarker = ({ color }) => {
   );
 };
 
-const VictorySplash = (props) => {
+const GameEndSplash = (props) => {
   return (
     <div id="victory-splash" className='splash-div flex-column'>
-      <span className='big-text'>Victory!</span>
+      <span className='big-text'>
+        {props.victory ? 'Victory!' : 'Game over'}
+      </span>
       <div className='player-rows' style={{ gap: `10px`}}>
         {props.answer.map((color,i) =>
             <AnswerMarker
@@ -33,4 +35,4 @@ const VictorySplash = (props) => {
   );
 };
 
-export default VictorySplash;
+export default GameEndSplash;
