@@ -278,6 +278,10 @@ button:hover {
         width: 45px;
         height: 45px;
     }
+    .cpu-markers {
+        height: 90%;
+        width: 90%;
+    }
 }
 @media only screen and (max-height: 550px) {
     .player-buttons, .answer-markers {
