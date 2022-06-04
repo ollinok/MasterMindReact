@@ -5,6 +5,7 @@ const AnswerMarker = ({ color }) => {
       style={{
         backgroundColor: color,
         borderStyle: 'solid',
+        borderColor: 'midnightblue',
         borderWidth: '2px'
         }}>
     </div>

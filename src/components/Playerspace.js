@@ -10,7 +10,7 @@ const ActivePlayerButton = ({ i, currentGuess, enterGuess }) => {
       }
     : styling = {
         ...styling,
-        animationName: `activeColor`,
+        animationName: `activeRow`,
         animationDuration: `3s`,
         animationIterationCount: `infinite`
       };
