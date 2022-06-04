@@ -67,7 +67,7 @@ const PlayerSpace = (props) => {
         <PlayerRow 
           key={i}
           row={row}
-          index={10-i}
+          index={9-i}
           currentRow={props.currentRow}
           currentGuess={props.currentGuess}
           enterGuess={props.enterGuess}

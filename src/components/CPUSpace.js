@@ -12,7 +12,7 @@ const CPUmarker = ({ color }) => {
 
 const CPURow = ({ index, row }) => {
   return (
-    <div id={`cpu-row${10-index}`} className='cpu-rows'>
+    <div id={`cpu-row${9-index}`} className='cpu-rows'>
       {row.map((color, i) =>
         <CPUmarker
           key={i}
