@@ -5,7 +5,7 @@ import ColorSpace from './components/ColorSpace';
 import CheckButtonSpace from './components/CheckButtonSpace';
 import AnswerTitleSpace from './components/AnswerTitleSpace';
 import HelpMenu from './components/HelpMenu';
-import VictorySplash from './components/VictorySplash';
+import GameEndSplash from './components/GameEndSplash';
 import { useEffect, useState } from 'react';
 
 import generateAnswer from './utils/generateAnswer';
@@ -19,6 +19,7 @@ function App() {
   const [board, setBoard] = useState([])
   const [cpuMarkers, setCpuMarkers] = useState([]);
   const [gameEnd, setGameEnd] = useState(false);
+  const [victory, setVictory] = useState(false);
   const [newGame, setNewGame] = useState(0);
   const [showHelp, setShowHelp] = useState(false);
 
@@ -41,11 +42,8 @@ function App() {
   };
 
   const checkGuess = () => {
-    console.log('clicked guess');
-    console.log(answer);
-    console.log(guess);  
     if (guess.every((x,i) => x === answer[i])) {
-      console.log('voitto');
+      setVictory(true);
       setCurrentRow(0);
       setGameEnd(true);
     } else {
@@ -91,6 +89,11 @@ function App() {
     setCpuMarkers(newCpuMarkers);
   };
 
+  if (currentRow === 11) {
+    setCurrentRow(0);
+    setGameEnd(true);
+  }
+
   return (
     <>
       <main className='grid-container'>
@@ -120,8 +123,9 @@ function App() {
           show={() => setShowHelp(!showHelp)}
         />
         {gameEnd
-          ? <VictorySplash
+          ? <GameEndSplash
               answer={answer}
+              victory={victory}
               newGame={() => setNewGame(newGame + 1)}
             />
           : null
