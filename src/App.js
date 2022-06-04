@@ -93,6 +93,7 @@ function App() {
     setCurrentRow(0);
     setGameEnd(true);
   }
+  console.log(answer);
 
   return (
     <>

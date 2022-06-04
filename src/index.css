@@ -50,7 +50,7 @@ footer {
 .grid-rows {
     display: grid;
     grid-template-rows: repeat(9, 1fr);
-    gap: 4px;
+    gap: 1px;
 }
 
 .flex-column {
@@ -277,5 +277,11 @@ button:hover {
     .check-button {
         width: 45px;
         height: 45px;
+    }
+}
+@media only screen and (max-height: 550px) {
+    .player-buttons, .answer-markers {
+        max-width: 40px;
+        max-height: 40px;
     }
 }
