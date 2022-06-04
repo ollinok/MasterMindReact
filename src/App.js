@@ -89,7 +89,7 @@ function App() {
     setCpuMarkers(newCpuMarkers);
   };
 
-  if (currentRow === 11) {
+  if (currentRow === 10) {
     setCurrentRow(0);
     setGameEnd(true);
   }
