@@ -66,8 +66,8 @@ footer {
     width: 60px;
     margin-left: 2px;
     padding: 2px;
-    border-style: solid;
-    border-width: 1px;
+    /* border-style: solid;
+    border-width: 1px; */
     box-sizing: border-box;
     justify-self: right;
 }
@@ -83,8 +83,8 @@ footer {
     width: 60px;
     margin-right: 2px;
     padding: 2px;
-    border-style: solid;
-    border-width: 1px;
+    /* border-style: solid;
+    border-width: 1px; */
     box-sizing: border-box;
     justify-self: left;
 }
@@ -163,7 +163,14 @@ button:hover {
     margin: auto;
 }
 .check-button {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    border-style: solid;
     border-radius: 15px;
+    font-size: 30px;
+    color: green;
 }
 .help-button {
     display: block;
@@ -195,18 +202,17 @@ button:hover {
     border-style: solid;
     border-radius: 10px;
     padding: 10px;
+    background-color: black;
+    color: whitesmoke;
+    border-color: rgb(83, 83, 83);
 }
 #victory-splash {
-    background-color: cornflowerblue;
     height: 200px;
     width: 80%;   
     justify-content: space-around;
 }
 #help-splash {
     justify-content: center;
-    background-color: black;
-    color: whitesmoke;
-    border-color: lightgray;
     height: 600px;
     width: 80%;
 }
@@ -218,7 +224,7 @@ button:hover {
 }
 
 /* ANIMATIONS */
-@keyframes activeColor {
+@keyframes activeRow {
     0% {opacity: 1;}
     50% {opacity: 0.5;}
     100% {opacity: 1;}
@@ -231,11 +237,12 @@ button:hover {
         flex-direction: column;
         align-items: center;
         font-size: 110%;
+        background-color: rgb(61, 61, 61);
     }
     main, footer {
         width: 80%;
         border-style: solid;
-        border-width: 2px;
+        border-width: 0 2px 0 2px;
         border-color: black;
         box-sizing: border-box;
     }
@@ -262,5 +269,9 @@ button:hover {
     .player-buttons, .answer-markers {
         max-width: 44px;
         max-height: 44px;
+    }
+    .check-button {
+        width: 45px;
+        height: 45px;
     }
 }

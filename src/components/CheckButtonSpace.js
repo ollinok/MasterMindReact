@@ -6,7 +6,7 @@ const CheckButton = ({ currentRow, currentGuess, checkGuess }) => {
       style={styling}
       onClick={() => checkGuess()}
       disabled={currentGuess.includes(undefined)}>
-      Check
+      &#10004;
     </button>
   );
 }

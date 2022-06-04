@@ -1,14 +1,11 @@
 const Color = ({ color, changeColor, currentColor }) => {
   const activeButton = {
-    borderColor: `black`,
-    animationName: `activeColor`,
-    animationDuration: `3s`,
-    animationIterationCount: `infinite`,
-    '--color': `${color}`
+    borderColor: `${color}`,
+    borderWidth: `3px`
   }
   const styling = color === currentColor 
     ? { ...activeButton, backgroundColor: `${color}` }
-    : { backgroundColor: `${color}` }; 
+    : { backgroundColor: `${color}`, opacity: '0.3' }; 
   return (
     <button
       className='color-buttons'

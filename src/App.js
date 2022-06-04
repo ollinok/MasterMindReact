@@ -118,10 +118,6 @@ function App() {
           currentColor={currentColor}
           changeColor={(c) => changeColor(c)}
         />
-        <HelpMenu
-          status={showHelp}
-          show={() => setShowHelp(!showHelp)}
-        />
         {gameEnd
           ? <GameEndSplash
               answer={answer}
@@ -130,6 +126,10 @@ function App() {
             />
           : null
         }
+        <HelpMenu
+          status={showHelp}
+          show={() => setShowHelp(!showHelp)}
+        />
       </main>
       <footer>
         &copy;2022 Olli Nokkonen
