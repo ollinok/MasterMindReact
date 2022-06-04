@@ -5,23 +5,29 @@ import ColorSpace from './components/ColorSpace';
 import CheckButtonSpace from './components/CheckButtonSpace';
 import AnswerTitleSpace from './components/AnswerTitleSpace';
 import HelpMenu from './components/HelpMenu';
+import VictorySplash from './components/VictorySplash';
 import { useEffect, useState } from 'react';
+
 import generateAnswer from './utils/generateAnswer';
 
 function App() {
   const [currentColor, setCurrentColor] = useState('red');
-  const [currentRow, setCurrentRow] = useState(1);
+  const [currentRow, setCurrentRow] = useState(0);
   const [answer, setAnswer] = useState([]);
   const [guess, setCurrentGuess] = useState([...Array(4)]);
   const colors = ['red', 'blue', 'green', 'yellow', 'black', 'white', 'purple'];
   const [board, setBoard] = useState([])
   const [cpuMarkers, setCpuMarkers] = useState([]);
+  const [gameEnd, setGameEnd] = useState(false);
+  const [newGame, setNewGame] = useState(0);
 
   useEffect(() => {
+    setGameEnd(false);
     setBoard([...Array(10)].fill([...Array(4)]));
     setCpuMarkers([...Array(10)].fill([...Array(4)]));
     setAnswer(generateAnswer(colors));
-  }, []);
+    setCurrentRow(1);
+  }, [newGame]);
 
   const changeColor = (color) => {
     setCurrentColor(color);
@@ -36,9 +42,11 @@ function App() {
   const checkGuess = () => {
     console.log('clicked guess');
     console.log(answer);
-    console.log(guess);
+    console.log(guess);  
     if (guess.every((x,i) => x === answer[i])) {
       console.log('voitto');
+      setCurrentRow(0);
+      setGameEnd(true);
     } else {
       setCurrentRow(currentRow + 1);
     }
@@ -82,8 +90,6 @@ function App() {
     setCpuMarkers(newCpuMarkers);
   };
 
-
-
   return (
     <>
       <main className='grid-container'>
@@ -109,9 +115,13 @@ function App() {
           currentColor={currentColor}
           changeColor={(c) => changeColor(c)}
         />
-        {/* <div id="victory-splash">
-
-        </div> */}
+        {gameEnd
+          ? <VictorySplash
+              answer={answer}
+              newGame={() => setNewGame(newGame + 1)}
+            />
+          : null
+        }
       </main>
       <footer>
         &copy;2022 Olli Nokkonen
