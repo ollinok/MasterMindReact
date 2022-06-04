@@ -1,5 +1,5 @@
 const CheckButton = ({ currentRow, currentGuess, checkGuess }) => {
-  const styling = {gridRow: 11 - currentRow};
+  const styling = {gridRow: 10 - currentRow};
   return (
     <button
       className='check-button'

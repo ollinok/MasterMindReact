@@ -25,8 +25,8 @@ function App() {
 
   useEffect(() => {
     setGameEnd(false);
-    setBoard([...Array(10)].fill([...Array(4)]));
-    setCpuMarkers([...Array(10)].fill([...Array(4)]));
+    setBoard([...Array(9)].fill([...Array(4)]));
+    setCpuMarkers([...Array(9)].fill([...Array(4)]));
     setAnswer(generateAnswer(colors));
     setCurrentRow(1);
   }, [newGame]);
