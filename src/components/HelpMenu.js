@@ -66,11 +66,10 @@ const HelpMenu = (props) => {
             ?
         </button>
       </div>
-      {props.status
-        ? <HelpSplash
-            show={props.show}
-          />
-        : null
+      {props.status &&
+        <HelpSplash
+          show={props.show}
+        />
       }
     </>
   );

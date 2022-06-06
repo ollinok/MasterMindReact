@@ -94,6 +94,7 @@ footer {
     gap: 2px;
     padding: 2px;
     align-items: center;
+    min-height: 50px;
 }
 #title-space {
     grid-area: title-space;
@@ -279,7 +280,7 @@ button:hover {
     }
     .check-button {
         width: 45px;
-        height: 45px;
+        height: 40px;
     }
     .cpu-markers {
         height: 90%;

@@ -119,13 +119,12 @@ function App() {
           currentColor={currentColor}
           changeColor={(c) => changeColor(c)}
         />
-        {gameEnd
-          ? <GameEndSplash
+        {gameEnd &&
+           <GameEndSplash
               answer={answer}
               victory={victory}
               newGame={() => setNewGame(newGame + 1)}
             />
-          : null
         }
         <HelpMenu
           status={showHelp}

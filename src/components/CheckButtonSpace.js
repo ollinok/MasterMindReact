@@ -2,7 +2,7 @@ import checkButton from '../img/checkbutton.png';
 
 const CheckButton = ({ currentRow, currentGuess, checkGuess }) => {
   let styling = {
-    gridRow: 10 - currentRow,
+    gridRow: 10 - (currentRow === 0 ? 1 : currentRow),
   };
   if (!currentGuess.includes(undefined)) {
     styling = {
