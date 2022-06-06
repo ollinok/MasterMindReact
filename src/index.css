@@ -42,7 +42,7 @@ footer {
     grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: 1fr 15fr 2fr;
     grid-template-areas: 
-        ". answer-space help"
+        ". title-space help"
         "cpu-space player-space check-space"
         "color-space color-space color-space";
     gap: 2px;
@@ -69,8 +69,6 @@ footer {
     width: 100%;
     margin-left: 2px;
     padding: 2px;
-    /* border-style: solid;
-    border-width: 1px; */
     box-sizing: border-box;
     justify-self: right;
 }
@@ -86,8 +84,6 @@ footer {
     width: 100%;
     margin-right: 2px;
     padding: 2px;
-    /* border-style: solid;
-    border-width: 1px; */
     box-sizing: border-box;
     justify-self: left;
 }
@@ -99,8 +95,8 @@ footer {
     padding: 2px;
     align-items: center;
 }
-#answer-space {
-    grid-area: answer-space;
+#title-space {
+    grid-area: title-space;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     min-height: 40px;

@@ -3,7 +3,6 @@ import PlayerSpace from './components/Playerspace';
 import CPUSpace from './components/CPUSpace';
 import ColorSpace from './components/ColorSpace';
 import CheckButtonSpace from './components/CheckButtonSpace';
-import AnswerTitleSpace from './components/AnswerTitleSpace';
 import HelpMenu from './components/HelpMenu';
 import GameEndSplash from './components/GameEndSplash';
 import { useEffect, useState } from 'react';
@@ -97,7 +96,9 @@ function App() {
   return (
     <>
       <main className='grid-container'>
-        <AnswerTitleSpace />
+        <div id='title-space'>
+          <h1 style={{ gridColumn: '1 / 5' }}>MastermindReact</h1>
+        </div>
         <CPUSpace
           cpuMarkers={cpuMarkers}
         />
