@@ -3,9 +3,12 @@ html, body, #root {
     height: 100%;
     font-family: 'Koulen', cursive;
 }
+#root {
+    font-size: 80%;
+}
 h1 {
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
     padding: 0;
     margin: 0;
 }
@@ -37,7 +40,7 @@ footer {
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 1fr 9fr 1fr;
+    grid-template-rows: 1fr 15fr 2fr;
     grid-template-areas: 
         ". answer-space help"
         "cpu-space player-space check-space"
@@ -46,8 +49,8 @@ footer {
 }
 .grid-rows {
     display: grid;
-    grid-template-rows: repeat(10, 1fr);
-    gap: 4px;
+    grid-template-rows: repeat(9, 1fr);
+    gap: 1px;
 }
 
 .flex-column {
@@ -63,7 +66,7 @@ footer {
 }
 #cpu-space {
     grid-area: cpu-space;
-    width: 60px;
+    width: 100%;
     margin-left: 2px;
     padding: 2px;
     /* border-style: solid;
@@ -80,7 +83,7 @@ footer {
 }
 #check-space {
     grid-area: check-space;
-    width: 60px;
+    width: 100%;
     margin-right: 2px;
     padding: 2px;
     /* border-style: solid;
@@ -100,7 +103,7 @@ footer {
     grid-area: answer-space;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    min-height: 60px;
+    min-height: 40px;
     gap: 2px;
     padding: 2px;
     align-items: center;
@@ -164,18 +167,17 @@ button:hover {
 }
 .check-button {
     display: block;
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     margin: auto;
     border-style: solid;
+    border-width: 2px;
     border-radius: 15px;
-    font-size: 30px;
-    color: green;
 }
 .help-button {
     display: block;
-    height: 70%;
-    width: 70%;
+    height: 40px;
+    width: 40px;
     margin: auto;
     border-radius: 5px;
     font-size: xx-large;
@@ -213,7 +215,7 @@ button:hover {
 }
 #help-splash {
     justify-content: center;
-    height: 600px;
+    height: 500px;
     width: 80%;
 }
 #help-splash div {
@@ -224,7 +226,7 @@ button:hover {
 }
 
 /* ANIMATIONS */
-@keyframes activeRow {
+@keyframes clickableButton {
     0% {opacity: 1;}
     50% {opacity: 0.5;}
     100% {opacity: 1;}
@@ -251,6 +253,7 @@ button:hover {
     }
     #help-splash {
         width: 500px;
+        height: 600px;
     }
     #help-splash div {
         padding: 10px 30px 0px 30px;
@@ -264,6 +267,14 @@ button:hover {
     main, footer {
         width: 450px;
     }
+    .player-buttons, .answer-markers, .color-buttons {
+        max-width: 55px;
+        max-height: 55px;
+    }
+    .cpu-markers {
+        max-width: 30px;
+        max-height: 30px;
+    }
 }
 @media only screen and (max-height: 730px) {
     .player-buttons, .answer-markers {
@@ -273,5 +284,15 @@ button:hover {
     .check-button {
         width: 45px;
         height: 45px;
+    }
+    .cpu-markers {
+        height: 90%;
+        width: 90%;
+    }
+}
+@media only screen and (max-height: 550px) {
+    .player-buttons, .answer-markers {
+        max-width: 40px;
+        max-height: 40px;
     }
 }

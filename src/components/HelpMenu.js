@@ -14,7 +14,7 @@ const HelpSplash = ({ show }) => {
         </div>
         <div className='center-text'>
           <span className='big-text'>Hints:</span><br/>
-          <span>Based on the colors you submitted, you will receive hints in the left side of the screen indicating how many of them are correct.</span><br/>
+          <span>Based on the colors you submitted, you will receive hints on the left side of the screen indicating how many of them are correct.</span><br/>
           <img
             src={helpPic}
             alt='Marker help'
