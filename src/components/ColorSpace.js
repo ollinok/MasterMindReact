@@ -1,11 +1,11 @@
 const Color = ({ color, changeColor, currentColor }) => {
   const activeButton = {
-    borderColor: `${color}`,
-    borderWidth: `3px`
+    borderColor: color === 'black' ? 'rgb(32, 32, 32)' : 'black',
+    borderWidth: '3px'
   }
   const styling = color === currentColor 
     ? { ...activeButton, backgroundColor: `${color}` }
-    : { backgroundColor: `${color}`, opacity: '0.3' }; 
+    : { backgroundColor: `${color}`, opacity: '0.2' }; 
   return (
     <button
       className='color-buttons'

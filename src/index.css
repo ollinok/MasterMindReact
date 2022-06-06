@@ -66,7 +66,7 @@ footer {
 }
 #cpu-space {
     grid-area: cpu-space;
-    width: 60px;
+    width: 100%;
     margin-left: 2px;
     padding: 2px;
     /* border-style: solid;
@@ -83,7 +83,7 @@ footer {
 }
 #check-space {
     grid-area: check-space;
-    width: 60px;
+    width: 100%;
     margin-right: 2px;
     padding: 2px;
     /* border-style: solid;
@@ -167,13 +167,12 @@ button:hover {
 }
 .check-button {
     display: block;
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     margin: auto;
     border-style: solid;
+    border-width: 2px;
     border-radius: 15px;
-    font-size: 30px;
-    color: green;
 }
 .help-button {
     display: block;
@@ -227,7 +226,7 @@ button:hover {
 }
 
 /* ANIMATIONS */
-@keyframes activeRow {
+@keyframes clickableButton {
     0% {opacity: 1;}
     50% {opacity: 0.5;}
     100% {opacity: 1;}
@@ -267,6 +266,14 @@ button:hover {
 @media only screen and (min-width: 1000px) {
     main, footer {
         width: 450px;
+    }
+    .player-buttons, .answer-markers, .color-buttons {
+        max-width: 55px;
+        max-height: 55px;
+    }
+    .cpu-markers {
+        max-width: 30px;
+        max-height: 30px;
     }
 }
 @media only screen and (max-height: 730px) {

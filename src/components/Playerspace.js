@@ -10,8 +10,8 @@ const ActivePlayerButton = ({ i, currentGuess, enterGuess }) => {
       }
     : styling = {
         ...styling,
-        animationName: `activeRow`,
-        animationDuration: `3s`,
+        animationName: `clickableButton`,
+        animationDuration: `2s`,
         animationIterationCount: `infinite`
       };
 
@@ -25,9 +25,16 @@ const ActivePlayerButton = ({ i, currentGuess, enterGuess }) => {
 }
 
 const PlayerButton = ({ color }) => {
-  const styling = {
+  let styling = {
     backgroundColor: color
   };
+  if (color) {
+    styling = {
+      ...styling,
+      borderStyle: 'solid',
+      borderColor: 'black',
+    }
+  }
   return (
     <button 
       className='player-buttons'
