@@ -229,8 +229,20 @@ button:hover {
     100% {opacity: 1;}
 }
 
+@media only screen and (min-width: 320px) and (max-width: 919px) and (orientation:landscape) {
+    body {
+        transform: rotate(-90deg);
+        transform-origin: left top;
+        width: 100vh;
+        height: 100vw;
+        overflow-x: hidden;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+}
 
-@media only screen and (min-width: 450px) {
+@media only screen and (min-width: 920px) {
     #root {
         display: flex;
         flex-direction: column;
@@ -239,11 +251,20 @@ button:hover {
         background-color: rgb(61, 61, 61);
     }
     main, footer {
-        width: 80%;
+        /* width: 80%; */
+        width: 450px;
         border-style: solid;
         border-width: 0 2px 0 2px;
         border-color: black;
         box-sizing: border-box;
+    }
+    .player-buttons, .answer-markers, .color-buttons {
+        max-width: 55px;
+        max-height: 55px;
+    }
+    .cpu-markers {
+        max-width: 30px;
+        max-height: 30px;
     }
     #victory-splash {
         width: 350px;
@@ -261,7 +282,7 @@ button:hover {
 }
 
 @media only screen and (min-width: 1000px) {
-    main, footer {
+    /* main, footer {
         width: 450px;
     }
     .player-buttons, .answer-markers, .color-buttons {
@@ -271,9 +292,9 @@ button:hover {
     .cpu-markers {
         max-width: 30px;
         max-height: 30px;
-    }
+    } */
 }
-@media only screen and (max-height: 730px) {
+@media only screen and (max-height: 680px) and (max-width: 700px) {
     .player-buttons, .answer-markers {
         max-width: 44px;
         max-height: 44px;
@@ -287,7 +308,7 @@ button:hover {
         width: 90%;
     }
 }
-@media only screen and (max-height: 550px) {
+@media only screen and (max-height: 550px) and (max-width: 550px) {
     .player-buttons, .answer-markers {
         max-width: 40px;
         max-height: 40px;
